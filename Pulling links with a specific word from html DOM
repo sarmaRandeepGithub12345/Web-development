@@ -1,0 +1,11 @@
+let a=Array.from(document.links);
+for(let i=0;i<a.length;i++){
+a[i]=a[i].href;
+}
+
+let t=prompt("Write your devoured word:");
+for(let i=0;i<a.length;i++){
+    if(a[i].indexOf(t)==-1){
+        console.log(a[i]);
+    }
+}
