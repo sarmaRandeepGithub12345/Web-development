@@ -1,0 +1,14 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "this is new tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "geeky_shows"
+  ],
+  "author": "Randeep Sarma",
+  "license": "ISC"
+}
