@@ -1,7 +1,6 @@
 {
-  "name": "crud",
+  "name": "crud-operation",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app"
@@ -9,13 +8,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "ejs": "^3.1.8",
-    "express": "^4.18.2",
-    "mongoose": "^6.7.0"
-  },
+  "description": "",
+  "type": "module",
   "devDependencies": {
     "nodemon": "^2.0.20"
   },
-  "type": "module"
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.2"
+  }
 }

@@ -1,20 +1,22 @@
-import express from "express"
-import studentController from "../controllers/studentController.js"
-const router =express.Router();
+import express from "express";
+import Renderer from "../controllers/controller.js";
+const router=express.Router();
+
+/*done*/
+router.get('/',Renderer.getAlldoc);
+
+/*done*/
+router.post('/',Renderer.createDoc)//Clicking Submit
+
+/*done */
+router.post('/delete/:id',Renderer.DeleteDoc)
+
+/*done */
+router.get('/edit/:id',Renderer.updateDoc)//get /student/edit
+
+router.post('/update/:id',Renderer.finaliseUpdate)
 
 
-router.get("/",studentController.getAllDoc)
 
-//On clicking submit
-router.post("/",studentController.createDoc)
-
-//On clicking edit
-router.get('/edit/:id',studentController.editDoc)
-
-//update doc
-router.post('/update/:id',studentController.updateDocById)
-
-//delete doc
-router.post('/delete/:id',studentController.deleteDocById)
 
 export default router
