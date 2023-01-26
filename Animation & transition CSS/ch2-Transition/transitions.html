@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions</title>
+</head>
+<style>
+body{
+    background: #333;
+}
+.box{
+    background: white;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: auto;
+    top: 200px;
+    transition-property: background , border-radius, transform;
+    
+    /* first seconds are for changing color */
+    /* rest of the seconds are for changing border radius */  
+    transition-duration: 1s,3s;
+    transition-delay: 2s;
+    transition-timing-function: linear;
+}
+.box:hover{
+background: red;
+border-radius: 50%;
+
+/* rotate figure along Y axis by 100 deg */ 
+transform: rotateY(100deg);
+}
+
+</style>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>
