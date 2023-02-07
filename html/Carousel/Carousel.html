@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background: #eee;
+    }
+
+    .container {
+        width: 90%;
+        margin: 20px auto;
+        height: 300px;
+    }
+
+    .carousel {
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        border: 2px solid orange;
+        border-radius: 3px;
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slider {
+
+        display: flex;
+        height: 100%;
+        width: 500%;
+
+        /* This does not let the slider shrink */
+        flex-shrink: 0;
+
+        transition: all 0.5s;
+    }
+
+    .slider section {
+        flex-basis: 20%;
+
+        /* each section taking 20% of the slider with width 500% of the carousel */
+        width: 20%;
+        flex-shrink: 0;
+        flex: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 10px;
+        cursor: pointer;
+    }
+
+    .arrow.prev {
+        left: 10px;
+    }
+
+    .arrow.next {
+        right: 10px;
+    }
+</style>
+
+<body>
+    <div class="container">
+
+        <div class="carousel">
+            <div class="slider">
+                <section>Content Section 1</section>
+                <section>Content Section 2</section>
+                <section>Content Section 3</section>
+                <section>Content Section 4</section>
+                <section>Content Section 5</section>
+            </div>
+            <div class="controls">
+                <span class="arrow prev">prev</span>
+                <span class="arrow
+                 next">next</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    const slider = document.querySelector('.slider')
+    const prev = document.querySelector('.prev')
+    const next = document.querySelector('.next')
+    const carousel = document.querySelector('.carousel')
+    var direction;
+    prev.addEventListener('click', function () {
+        if (direction === -1) {
+            slider.appendChild(slider.firstElementChild)
+            direction = 1;
+        }
+        carousel.style.justifyContent = 'flex-end'
+        slider.style.transform = 'translate(+20%)'
+    })
+    next.addEventListener('click', function () {
+        direction = -1;
+        carousel.style.justifyContent = 'flex-start'
+        slider.style.transform = 'translate(-20%)'
+    })
+    slider.addEventListener('transitionend', function () {
+        if (direction === -1) {
+            slider.appendChild(slider.firstElementChild)
+        } else if (direction === 1) {
+            slider.prepend(slider.lastElementChild)
+        }
+        slider.style.transition = 'none';
+        slider.style.transform = 'translate(0)';
+
+        setTimeout(function () {
+            slider.style.transition = 'all 0.5s'
+        })
+
+
+    })
+
+</script>
+
+</html>
