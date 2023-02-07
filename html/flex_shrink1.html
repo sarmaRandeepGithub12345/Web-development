@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+      background: #eee;
+      margin: 50px;
+      padding: 0px;
+      border: 3px solid #000;
+  
+      display: flex;
+      flex-wrap: wrap;
+    } 
+    .items{
+      color: #fff;
+      font-style: 20px;
+      font-weight: bold;
+      text-align: center;
+      padding: 0px;
+      margin: 0px;
+      height: 60px;
+      width: 200px;
+  
+    }
+    .item1{
+     background: orangered;
+
+     /* size is fixed.shrinks on values greater than 0 */  
+     flex-shrink: 0;
+    
+    }
+    .item2{
+      background: yellowgreen;
+    }
+    .item3{
+      background: mediumpurple;
+    }
+    .item4{
+      background: hotpink;
+    }
+  </style>
+<body>
+    <div class="container">
+        <div class="items item1">One</div>
+        <div class="items item2">Two</div>
+        <div class="items item3">Three</div>
+        <div class="items item4">Four</div>
+    </div>
+</body>
+</html>
